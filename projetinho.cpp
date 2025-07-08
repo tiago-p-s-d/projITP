@@ -1,4 +1,4 @@
-#include "func/funcoes.h" 
+#include "declaracoes/paleta.h" 
 #include <bits/stdc++.h>
 
 int main()
