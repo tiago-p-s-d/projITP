@@ -1,5 +1,6 @@
 #ifndef criar_imagem_h
 #define criar_imagem_h
+
 #include "paleta.h"
 #include <string>
 
