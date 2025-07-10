@@ -1,4 +1,4 @@
-#include "declaracoes/criar_imagem.h"
+#include "criar_imagem.h"
 #include <fstream>
 
 Imagem::Imagem(int l, int a) {

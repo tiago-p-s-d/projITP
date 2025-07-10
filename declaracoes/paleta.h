@@ -1,5 +1,5 @@
-#ifndef funcoes_h
-#define funcoes_h
+#ifndef paleta_h
+#define paleta_h
 
 #include <string>
 

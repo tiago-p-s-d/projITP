@@ -1,4 +1,4 @@
-#include "./declaracoes/paleta.h"
+#include "paleta.h"
 #include <bits/stdc++.h>
 
 Paleta::Paleta(int qnt, Cores cores[], int val[]) {

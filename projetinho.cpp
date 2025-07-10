@@ -1,26 +1,25 @@
-#include "declaracoes/paleta.h" 
+#include "./declaracoes/paleta.h"
+#include "./declaracoes/criar_imagem.h"
 #include <bits/stdc++.h>
 
 int main()
 {
-    Cores red = {255, 0, 0};
-    Cores green = {0, 255, 0};
-    Cores blue = {0, 0, 255};
-    Cores blorb= {255, 0, 255};
-    Cores azulbebejujubademacaverde = {255, 255, 255};
+    int largura = 500;
+    int altura = 500;
 
-    Cores arrc[] = {red, green, blue,blorb, azulbebejujubademacaverde};
-    int arri[]={0,10, 15, 20, 255};
-    
-    Paleta teste(
-        5,
-        arrc, 
-        arri
-    );
-    
-    std::cout << " {" << teste.getCorByAltura(255).green << "}" ;
+    // Cria imagem preta de 100x100
+    Imagem img(largura, altura);
 
-    
+    // Pinta um quadrado vermelho no canto superior esquerdo (20x20)
+    Cores vermelho = {255, 0, 0};
+    for (int i = 0; i < 20; ++i) {
+        for (int j = 0; j < 20; ++j) {
+            img.setPixel(i, j, vermelho);
+        }
+    }
+
+    // Salva a imagem no formato PPM
+    img.salvarPPM("teste.ppm", 255);
 
     return 0;
 }
