@@ -1,25 +1,20 @@
 #include "./declaracoes/paleta.h"
 #include "./declaracoes/criar_imagem.h"
+#include "./declaracoes/criar_mapa_altitude.h"
 #include <bits/stdc++.h>
 
 int main()
 {
-    int largura = 500;
-    int altura = 500;
+    MapaAltitudes mapa;
+    
+    // Gera o mapa com tamanho baseado em 2^n + 1 (n = 5) e rugosidade 10
+    mapa.gerarMapa(7, 10);
 
-    // Cria imagem preta de 100x100
-    Imagem img(largura, altura);
 
-    // Pinta um quadrado vermelho no canto superior esquerdo (20x20)
-    Cores vermelho = {255, 0, 0};
-    for (int i = 0; i < 20; ++i) {
-        for (int j = 0; j < 20; ++j) {
-            img.setPixel(i, j, vermelho);
-        }
-    }
 
-    // Salva a imagem no formato PPM
-    img.salvarPPM("teste.ppm", 255);
+
+    // Salva o mapa em um arquivo
+    mapa.salvarMatriz("mapa.txt");
 
     return 0;
 }
