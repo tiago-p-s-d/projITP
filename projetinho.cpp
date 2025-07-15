@@ -1,6 +1,7 @@
 #include "./declaracoes/paleta.h"
 #include "./declaracoes/criar_imagem.h"
 #include "./declaracoes/criar_mapa_altitude.h"
+#include "./declaracoes/sombras.h"
 #include <bits/stdc++.h>
 
 int main()
@@ -45,5 +46,8 @@ int main()
 
     std::cout << "Imagem gerada em saida.ppm" << std::endl;
 
+    Sombras sombra;
+    sombra.aplicarSombra(imagem, mapa);
+    
     return 0;
 }
