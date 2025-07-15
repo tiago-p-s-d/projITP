@@ -30,10 +30,24 @@ Cores* Paleta::getCores() { return this->cores; }  // Changed to return pointer 
 int* Paleta::getValores() { return this->valores; } // Changed to return pointer to array
 
 Cores Paleta::getCorByAltura(int altura) {
+    int limite_inferior = 0;
     for (int i = 0; i < this->qnt_cores; i++) {
-        if(altura == valores[i]) {
-            return cores[i];
+        int limite_superior = valores[i];
+
+        // Último intervalo inclui o limite superior
+        if (i == qnt_cores - 1) {
+            if (altura >= limite_inferior && altura <= limite_superior) {
+                return cores[i];
+            }
+        } else {
+            if (altura >= limite_inferior && altura < limite_superior) {
+                return cores[i];
+            }
         }
+
+        limite_inferior = limite_superior;
     }
+
+    // Se não encontrar, retorna preto
     return {0, 0, 0};
 }

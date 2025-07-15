@@ -8,7 +8,7 @@
 
 class MapaAltitudes{
     private:
-    int** mapa_altitudes;
+    double** mapa_altitudes;
     int tamanho;
 
     public:
@@ -16,17 +16,19 @@ class MapaAltitudes{
     void diamondSquare(int passo, float rugosidade);
     void diamondStep(int x, int y, int passo, float rugosidade);
     void squareStep(int x, int y, int passo, float rugosidade);
-
+    void suavizarMapa();
     int consultarAltitude(int lin, int col);
     int consultarQntLinhas();
     int consultarQntColunas();
     int salvarMatriz(std::string name);
     int lerMatriz(std::string name);
+    void normalizar();
+    float randomFloat(float amplitude);
+
 
     
     MapaAltitudes();
     ~MapaAltitudes();
-    float randomFloat(float range);
 
 };
 
