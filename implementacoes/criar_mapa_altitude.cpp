@@ -27,11 +27,7 @@ int MapaAltitudes::gerarMapa(int n, float rugosidade)
     double c3 = rand() % 100;
     double c4 = rand() % 100;
 
-    /*   double c1 = 50;
-       double c2 = 50;
-       double c3 = 50;
-       double c4 = 50;
-   */
+   
     // Alocar memória para a matriz
     mapa_altitudes = new double *[tamanho];
     for (int i = 0; i < tamanho; ++i)
@@ -98,6 +94,9 @@ void MapaAltitudes::diamondStep(int x, int y, int passo, float rugosidade)
     {
         newpoint = 100;
     }
+    else if (newpoint < 0){
+        newpoint = 0;
+    }
     mapa_altitudes[y + metade][x + metade] = newpoint;
 }
 
@@ -135,6 +134,9 @@ void MapaAltitudes::squareStep(int x, int y, int passo, float rugosidade)
     if (newpoint > 100)
     {
         newpoint = 100;
+    }
+    else if (newpoint < 0){
+        newpoint = 0;
     }
 
     mapa_altitudes[y][x] = newpoint;

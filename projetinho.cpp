@@ -7,7 +7,7 @@
 int main()
 {
     int n = 8;
-    float rugosidade = 30;
+    float rugosidade = 50;
 
     // 1. Criar mapa e gerar matriz com o algoritmo diamond-square
     MapaAltitudes mapa;
@@ -42,12 +42,12 @@ int main()
         }
     }
 
+    Sombras sombra;
+    sombra.aplicarSombra(imagem, mapa);
     imagem.salvarPPM("saida.ppm", 255);
 
     std::cout << "Imagem gerada em saida.ppm" << std::endl;
 
-    Sombras sombra;
-    sombra.aplicarSombra(imagem, mapa);
     
     return 0;
 }
