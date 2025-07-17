@@ -22,7 +22,7 @@ int main()
     Cores neve = {255, 255, 255};
 
     // Valores são os limites superiores de cada faixa
-    int valores[] = {20, 40, 60, 80, 100};
+    int valores[] = {20, 50, 65, 90, 100};
     Cores cores[] = {azul_escuro, azul_claro, areia, verde_terra, neve};
 
     // Instanciar a paleta
